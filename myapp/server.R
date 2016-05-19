@@ -1,11 +1,11 @@
 library(shiny)
-require(birk)
-require(stringr)
+library(birk)
+library(stringr)
 
 convert <- function(input = '100,1 x 100 x 122 cm') {
   #Identify Numbers
   input <- gsub(",", ".", gsub("\\.", "", input))
-  numbers <- na.omit(as.numeric(unlist(strsplit(unlist(input), "[^0-9]+"))))
+  numbers <- na.omit(as.numeric(unlist(strsplit(unlist(input), "[^0-9.^0-9]+"))))
   
   #Identify Unit to convert from
   input_vector <- unlist(str_split(input, " x "))
