@@ -61,7 +61,7 @@ code = HTML(" <script> var myTextInputBinding = new Shiny.InputBinding();
 shinyUI(
   basicPage(
     code
-    ,myTextInput("myTextInput","Convert thisL","100 x 100 x 12 cm")    
+    ,myTextInput("myTextInput","Convert:","100 x 100 x 12 cm")    
     ,textOutput("meh")  
     ,HTML('')
 ))
