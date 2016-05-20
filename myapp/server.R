@@ -13,7 +13,9 @@ convert <- function(input = '100,1 x 100 x 122 cm') {
   unit.from <- str_trim(unit.from[length(unit.from)])
   
   #Identify Unit to convert to
-  units <- data.frame(from = c('cm', 'mm', 'm', 'ml', 'in', 'in', 'ft', 'floz'), to = c('inch', 'inch', 'ft', 'imp_oz','cm', 'mm', 'm', 'ml'), to2 = c('in', 'in', 'ft', 'floz''cm', 'mm', 'm', 'ml'), stringsAsFactors = F)
+  units <- data.frame(from = c('cm', 'mm', 'm', 'ml', 'in', 'in', 'ft', 'floz'), 
+                      to = c('inch', 'inch', 'ft', 'imp_oz','cm', 'mm', 'm', 'ml'), 
+                      to2 = c('in', 'in', 'ft', 'floz','cm', 'mm', 'm', 'ml'), stringsAsFactors = F)
   unit.to <- as.character(units[which(units[,1] == unit.from),2])
   
   #Do the conversion
