@@ -2,9 +2,11 @@ library(shiny)
 library(birk)
 library(stringr)
 
-convert <- function(input = '100,1 x 100 x 122 cm') {
+convert <- function(input = '100.1001 x 100 x 122 cm') {
+  #Converts ','  to '.'
+  input <- gsub(",", ".", input)
+  
   #Identify Numbers
-  input <- gsub(",", ".", gsub("\\.", "", input))
   numbers <- na.omit(as.numeric(unlist(strsplit(unlist(input), "[^0-9.^0-9]+"))))
   
   #Identify Unit to convert from
